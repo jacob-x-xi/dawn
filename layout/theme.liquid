@@ -274,6 +274,7 @@
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     {% if product %}
+      {{ cart | json }}
       {% for discount_application in cart.discount_applications %}
   Discount name: {{ discount_application.title }}
   Savings: -{{ discount_application.total_allocated_amount | money }}
